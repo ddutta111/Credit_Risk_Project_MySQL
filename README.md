@@ -12,7 +12,7 @@ This project demonstrates the use of SQL skills and techniques typically employe
 
 ## **Dataset**
 
-The dataset, sourced from Kaggle, focuses on loan borrowers, their characteristics, and their likelihood of defaulting. Missing values in the dataset were pre-processed using Microsoft Excel by imputing the mean for loan_amount and interest_rate columns. The modified data was then imported into SQL for advanced analysis.
+The dataset, sourced from Kaggle, focuses on loan borrowers, their characteristics, and their likelihood of defaulting. Missing values in the dataset were pre-processed using Microsoft Excel by imputing the mean for loan_int_rate column. The modified data was then imported into SQL for advanced analysis.
 
 ## **Data Description:**
 
@@ -335,7 +335,7 @@ LIMIT 10;
 
 **Loan Status Default Distribution:** 
 
-To interpret the loan status distribution data briefly:
+To interpret the loan status distribution briefly:
 
 Loan Status (1 = Defaulted, 0 = Not Defaulted)
 Total_loans: Number of loans in that category.
@@ -432,7 +432,181 @@ The credit risk score is a numerical representation that assesses the likelihood
 
 In summary, the credit risk score provides a summary measure of the borrower’s creditworthiness, with higher scores generally indicating a lower risk of default. The score is influenced by a combination of factors including income, loan amount, interest rate, age, and credit history.
 
-8. Rolling Average Calculation Insight:
+8. The rolling average of loan amounts, calculated over a 3-month period, shows how the average loan amount for each person changes over time. Here's a brief interpretation of the results:
+
+- Consistent Average: Most entries show a rolling average of $1000, indicating that many people have consistent loan amounts.
+
+- Variation in Average: Some individuals have varying rolling averages. For instance, entries like $1200, $1300, and up to $1966.67 reflect fluctuations in the loan amounts over the period.
+
+- Higher Averages: People with higher loan amounts show higher rolling averages, such as $1500 or $1800, often associated with higher incomes and loan amounts.
+
+- Extreme Values: Extreme rolling averages (e.g., $1800 or $1966.67) likely indicate high loan amounts or significant increases in the loan amount over the recent months.
+
+In summary, the rolling average gives a smoothed view of loan amounts, highlighting trends and variations in borrowing behavior over the 3-month period.
+
+9. Borrower segmentation by Risk Analysis Insight:
+   
+- Low Risk Borrowers:
+
+Income: Generally higher, often above $50,000.
+Loan Grade: Predominantly A to D.
+Employment Length: Varies, but many have longer employment lengths.
+Defaults: None or very few (not defaulted on file).
+Examples: Income from $9,900 to $500,000; loan grades A to E; employment length from 0 to 10 years.
+
+- Moderate Risk Borrowers:
+
+Income: Varies, but often lower than low-risk borrowers, with several cases around $50,000 to $120,000.
+Loan Grade: B to E.
+Employment Length: Varies, but some with shorter lengths.
+Defaults: Some historical defaults (indicated by 'Y' for default on file).
+Examples: Income from $10,000 to $306,000; loan grades B to E; employment length from 0 to 10 years.
+
+- High Risk Borrowers:
+
+Income: Varied, often higher, but not necessarily as high as low-risk borrowers.
+Loan Grade: Typically E to F.
+Employment Length: Often shorter or variable.
+Defaults: Generally have historical defaults (indicated by 'Y' for default on file).
+Examples: Income from $11,000 to $300,000; loan grades E to F; employment length from 0 to 10 years.
+
+Summary:
+
+Low Risk Borrowers: Higher income, better loan grades, longer employment, no default history.
+Moderate Risk Borrowers: Moderate income, mixed loan grades, varying employment length, occasional default history.
+High Risk Borrowers: Variable income, lower loan grades, shorter employment, and more frequent default history.
+
+- The majority of the borrower base is categorized as Low Risk, suggesting a relatively stable overall profile (74.79%)
+- Moderate Risk borrowers represent a significant but smaller segment, indicating some level of concern.(17.47%)
+- High Risk borrowers are the least common, but they still represent a crucial area for risk management and mitigation efforts.(7.73%)
+
+Additional Insights:
+    
+11. The age groups distribution analysis with the highest number of High Risk and Moderate Risk borrowers are as follows: -
+
+- High Risk Borrowers
+Age 24: 275 borrowers
+Age 22: 274 borrowers
+Age 23: 267 borrowers
+Interpretation: The ages 22, 23, and 24 have the highest number of High Risk borrowers. This suggests that individuals in their early to mid-20s are significantly overrepresented in the High Risk category. This could be due to factors like financial inexperience, higher debt-to-income ratios, or instability in early career stages.
+
+- Moderate Risk Borrowers
+Age 22: 621 borrowers
+Age 23: 605 borrowers
+Age 24: 602 borrowers
+Interpretation: Similarly, the ages 22, 23, and 24 also have the highest number of Moderate Risk borrowers. This indicates that young adults are also prevalent in the Moderate Risk category. This trend supports the idea that this age group is a key demographic for risk management, reflecting potential issues such as job stability or financial management skills.
+
+Summary -
+High Risk Borrowers: Younger age groups, particularly around 22 to 24 years, show the highest concentration, highlighting a critical area for targeted risk assessment and intervention.
+Moderate Risk Borrowers: The same age range also represents a large portion of Moderate Risk borrowers, suggesting that early adulthood is a period with considerable variability in financial risk.
+The overlap in age groups between High and Moderate Risk categories underscores the importance of focusing on financial education and risk management strategies for younger individuals.
+
+12.  Loan segments based on the loan amount and interest rate clustering analysis insight:
+
+- High Loan, High Interest and Low Loan, High Interest segments together represent a significant portion of the borrower base, with potential for financial stress due to high interest rates.
+- Low Loan, Low Interest segment represents borrowers in a more favorable financial position, with both manageable loan amounts and interest rates.
+- High Loan, Low Interest segment, while smaller, suggests that high loan amounts are being mitigated somewhat by lower interest rates.
+
+Overall, the clustering highlights how different combinations of loan amounts and interest rates impact borrower risk profiles and financial strain. Understanding these segments can help in tailoring risk management strategies and financial products.
+
+13. To understand whether the percentage of income spent on a loan (loan_percent_income) is a strong indicator of default, let's analyze the default rate relative to the percentage of income used for the loan
+
+Key Observations:
+
+- High Loan Percent of Income and High Default Rate:
+
+For high percentages of income allocated to the loan (e.g., 0.5 or above), the default rates are generally higher. For instance:
+At 0.53 loan_percent_income, the default rate is 0.79.
+At 0.42 loan_percent_income, the default rate is 0.77.
+At 0.35 loan_percent_income, the default rate is 0.61.
+This suggests a trend where higher loan payments relative to income are associated with higher default rates.
+
+- Low Loan Percent of Income and Low Default Rate:
+
+As the percentage of income used for the loan decreases, the default rates also tend to decrease. For example:
+At 0.10 loan_percent_income, the default rate is 0.12.
+At 0.01 loan_percent_income, the default rate is 0.05.
+This trend indicates that borrowers who spend a smaller percentage of their income on loan repayments are less likely to default.
+
+- Strong Correlation:
+
+The result shows a clear inverse relationship between loan_percent_income and default rate: as the percentage of income used for the loan decreases, the default rate also tends to decrease.
+
+High percentages (e.g., 0.30 and above) correlate with high default rates, while lower percentages (e.g., 0.10 and below) correlate with lower default rates.
+
+Summary -
+
+Loan percent of income is a strong indicator of default. Borrowers who allocate a larger portion of their income to loan repayments are more likely to default, while those who allocate a smaller portion tend to have lower default rates. This suggests that managing loan payments to be a smaller fraction of income can reduce default risk, supporting the use of loan percent of income as a key factor in default prediction.
+
+## **Recommendations**
+
+Based on the detailed analysis and findings from this SQL credit risk project, here are several vital recommendations for the business or bank we can suggest:
+
+1. Refine Risk-Based Pricing
+Adjust Interest Rates Based on Loan Grade: Given the correlation between loan grade and default rates, consider implementing more nuanced interest rate adjustments. Higher-grade loans (e.g., Grade A) should continue to receive lower interest rates, while lower-grade loans (e.g., Grade G) could be priced higher to reflect their risk.
+Incorporate Loan Percent of Income: Use the percentage of income spent on loan repayments as a factor in setting interest rates and determining loan eligibility. Higher percentages should trigger higher interest rates or stricter lending criteria.
+
+2. Enhance Credit Risk Scoring Models
+Incorporate Home Ownership: Since home ownership correlates with lower default rates, include home ownership status in your credit risk scoring models. Fully owning a home could be an indicator of financial stability.
+Factor in Age and Employment Length: Adjust credit scoring to consider age and employment length more heavily. Younger borrowers and those with shorter employment histories show higher default risks.
+
+3. Segmented Risk Management Strategies
+Target High Risk Age Groups: Focus on improving financial education and support for younger borrowers, particularly those aged 22 to 24. Consider offering financial counseling or tailored loan products to this demographic.
+Develop Targeted Interventions for High-Risk Borrowers: Implement additional risk management strategies for borrowers with high loan percentages relative to income and those with lower-grade loans.
+
+4. Optimize Loan Product Offerings
+Balance Loan Amounts and Interest Rates: Create loan products with competitive interest rates for borrowers with lower loan amounts while offering flexible repayment terms to mitigate financial strain.
+Expand Low Loan, Low Interest Products: Given the favorable position of borrowers in this segment, increase the availability of products that fit this profile, promoting financial stability.
+
+5. Improve Default Prediction Models
+Use Loan Percent of Income as a Key Predictor: Strengthen default prediction models by incorporating the percentage of income spent on loans as a primary predictor of default risk. Regularly update the model with new data to refine accuracy.
+
+6. Enhance Borrower Segmentation
+Detailed Segmentation Analysis: Use detailed borrower segments (e.g., low, moderate, high risk) to tailor marketing, loan offerings, and risk management strategies. Ensure that segmentation considers income, loan grade, and other risk factors.
+
+7. Monitor and Adjust Based on Trends
+Track Rolling Averages: Regularly monitor rolling averages of loan amounts to identify trends and potential issues. Use this information to adjust lending practices and identify borrowers who may be at risk of financial stress.
+
+8. Strengthen Financial Education and Support
+Financial Literacy Programs: Develop and promote financial literacy programs, particularly for younger and high-risk borrowers, to improve financial management skills and reduce default rates.
+
+9. Regularly Review and Update Policies
+Dynamic Policy Adjustments: Continuously review and update loan policies and risk management practices based on ongoing analysis and emerging trends. Ensure policies remain relevant and effective in mitigating default risk.
+
+By implementing these recommendations, the bank or business can better manage risk, improve financial stability, and enhance borrower satisfaction.
+
+## **Conclusion**
+
+This credit risk analysis project has provided valuable insights into borrower behavior, loan performance, and default risk, which are crucial for enhancing the risk management strategies of the bank. By meticulously analyzing the dataset, several key findings and recommendations have emerged that can drive informed business decisions and improve overall financial stability.
+
+Key Insights:
+
+- Loan Grade and Default Rates: A clear relationship exists between loan grade and default rates, with lower-grade loans exhibiting significantly higher default rates. This insight underscores the importance of adjusting interest rates and lending criteria based on loan grades.
+
+- Impact of Loan Percent of Income: The percentage of income allocated to loan repayments is a strong indicator of default risk. Higher percentages correlate with higher default rates, suggesting that managing loan payments relative to income is crucial for reducing default risk.
+
+- Home Ownership Correlation: Borrowers who own their homes or have mortgages show lower default rates compared to renters. This correlation indicates that homeownership is associated with greater financial stability.
+
+- Age and Employment Length Insights: Younger borrowers and those with shorter employment histories are more likely to default. Tailoring risk management strategies for these demographics can help mitigate potential losses.
+
+- Segmentation and Purchasing Behavior: Clustering borrowers based on loan amounts and interest rates reveals varying risk profiles, helping to identify segments that may require targeted interventions or product adjustments.
+
+- Credit Risk Scoring: The credit risk score effectively summarizes a borrower’s creditworthiness, influenced by factors such as income, loan amount, and interest rates. Utilizing this score in risk assessment and decision-making can enhance predictive accuracy.
+
+By leveraging these key insights and above mentioned recommendations, the bank can enhance its risk management strategies, improve financial performance, and better serve its customers. The findings from this project offer a solid foundation for making data-driven decisions that can lead to more effective risk mitigation and optimized loan offerings.
+
+
+## Author - Debolina Dutta
+
+This project is part of my portfolio, showcasing the SQL skills essential for data analytics roles. 
+
+*LinkedIn**: (https://www.linkedin.com/in/duttadebolina/)
+
+
+
+
+
+
 
 
 
