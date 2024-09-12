@@ -400,13 +400,13 @@ Interpretation: Grade G has a significant imbalance with a majority of defaulted
 
 3. Home Ownership and Loan Relationships analysis shows that Renters (RENT) make up the largest group of borrowers, with 16,076 individuals. This could suggest that a significant proportion of loan borrowers do not own their homes, potentially indicating they might have less financial stability compared to homeowners or those with mortgages.
 
-Borrowers with a Mortgage (MORTGAGE) are the second-largest group at 13,093. These individuals are likely paying off a home loan, indicating they own property but are still carrying debt related to it.
+- Borrowers with a Mortgage (MORTGAGE) are the second-largest group at 13,093. These individuals are likely paying off a home loan, indicating they own property but are still carrying debt related to it.
 
-Homeowners (OWN) who fully own their homes (2,410 borrowers) form a much smaller group, implying that fewer borrowers come from fully paid-off homes, possibly because they have more financial stability and less need for loans.
+- Homeowners (OWN) who fully own their homes (2,410 borrowers) form a much smaller group, implying that fewer borrowers come from fully paid-off homes, possibly because they have more financial stability and less need for loans.
 
-Other: This small category of 107 borrowers likely includes less common forms of homeownership, such as living with family, in shared accommodations, or in unique housing arrangements.
+- Other: This small category of 107 borrowers likely includes less common forms of homeownership, such as living with family, in shared accommodations, or in unique housing arrangements.
 
-Business Insight: The majority of loan borrowers are either renting or still paying a mortgage, which may indicate higher financial obligations, potentially increasing the risk of default. Fully owning a home appears to correlate with fewer loans taken out.
+- Business Insight: The majority of loan borrowers are either renting or still paying a mortgage, which may indicate higher financial obligations, potentially increasing the risk of default. Fully owning a home appears to correlate with fewer loans taken out.
 
 Again, From the relationship analysis between avg number of loans and income level we see that:
 
