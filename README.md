@@ -16,31 +16,31 @@ The dataset, sourced from Kaggle, focuses on loan borrowers, their characteristi
 
 ## **Data Description:**
 
-Id - Borrower's Id (Added this column in the beginningg of teh dataset by using ato-increment function in excel and used it as Primary Key in MySql creditrisk table)
+```Id``` - Borrower's Id (Added this column in the beginningg of teh dataset by using ato-increment function in excel and used it as Primary Key in MySql creditrisk table)
 
-person_age	- Age of the borrower
+```person_age```	- Age of the borrower
 
-person_income	- Annual income of the borrower
+```person_income```	- Annual income of the borrower
 
-person_home_ownership	- Home ownership status
+```person_home_ownership```	- Home ownership status
 
-person_emp_length	- Length of employment (in years)
+```person_emp_length```	- Length of employment (in years)
 
-loan_intent	- Purpose of the loan
+```loan_intent```	- Purpose of the loan
 
-loan_grade	- Loan grade assigned to the borrower
+```loan_grade```	- Loan grade assigned to the borrower
 
-loan_amnt	- Loan amount
+```loan_amnt```	- Loan amount
 
-loan_int_rate	- Interest rate applied to the loan
+```loan_int_rat```e	- Interest rate applied to the loan
 
-loan_status	- Loan status (0 = non-default, 1 = default)
+```loan_status```	- Loan status (0 = non-default, 1 = default)
 
-loan_percent_income	- Percentage of income allocated to the loan
+```loan_percent_income```	- Percentage of income allocated to the loan
 
-cb_person_default_on_file	- Historical record of default
+```cb_person_default_on_file```	- Historical record of default
 
-cb_person_cred_hist_length - Length of the borrower's credit history
+```cb_person_cred_hist_length``` - Length of the borrower's credit history
 
 ## **Database setup, Table creation and Business Analysis:**
 
