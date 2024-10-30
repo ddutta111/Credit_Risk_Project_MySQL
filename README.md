@@ -610,9 +610,7 @@ By leveraging these key insights and above mentioned recommendations, the bank c
 
 ## Author - Debolina Dutta
 
-This project is part of my portfolio, showcasing the SQL skills essential for data analytics roles. 
-
-*LinkedIn**: (https://www.linkedin.com/in/duttadebolina/)
+LinkedIn: (https://www.linkedin.com/in/duttadebolina/)
 
 
 
