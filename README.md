@@ -337,7 +337,7 @@ WHERE loan_status = 1  -- Filtering only the defaulters
 ORDER BY loan_amnt DESC  -- Sorting by loan amount in descending order
 LIMIT 10;
 ```
-## **Reorts & Findings**
+## **Reports & Findings**
 
 1. Summary of statistics shows that the dataset has 31686 distinct customers or borrowers. The average borrower age is between 27 and 28, and their average income is $66691 along with average employment length is 4.8 years and average loan amunt by borrowers taken in $9661.31 with average interest rate 11.04%.
 
